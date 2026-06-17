@@ -33,3 +33,6 @@ Select any IPL franchise and instantly see:
 
 ## Dataset
 IPL Matches 2008-2022 (950 matches)
+
+## Live Demo
+🌐 https://ipl-web-app-bm7g.onrender.com
