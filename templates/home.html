@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Advanced Analytics Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="main-header">
+            <h1>🏏 IPL Analytics & Performance Dashboard</h1>
+            <p>Deploy real-time analytical queries to extract historical metrics, franchise win-timelines, and strategic insights across all IPL seasons.</p>
+        </header>
+
+        <main class="form-wrapper">
+            <form action="/results" method="post" class="analytics-form">
+                <label for="team" class="form-label">Select Franchise for Analytical Breakdown:</label>
+                <div class="input-group">
+                    <select name="team" id="team" required>
+                        <option value="" disabled selected>Choose a franchise...</option>
+                        <option value="Chennai Super Kings">Chennai Super Kings</option>
+                        <option value="Deccan Chargers">Deccan Chargers</option>
+                        <option value="Delhi Capitals">Delhi Capitals</option>
+                        <option value="Delhi Daredevils">Delhi Daredevils</option>
+                        <option value="Gujarat Lions">Gujarat Lions</option>
+                        <option value="Gujarat Titans">Gujarat Titans</option>
+                        <option value="Kings XI Punjab">Kings XI Punjab</option>
+                        <option value="Kochi Tuskers Kerala">Kochi Tuskers Kerala</option>
+                        <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+                        <option value="Lucknow Super Giants">Lucknow Super Giants</option>
+                        <option value="Mumbai Indians">Mumbai Indians</option>
+                        <option value="Pune Warriors">Pune Warriors</option>
+                        <option value="Punjab Kings">Punjab Kings</option>
+                        <option value="Rajasthan Royals">Rajasthan Royals</option>
+                        <option value="Rising Pune Supergiant">Rising Pune Supergiant</option>
+                        <option value="Rising Pune Supergiants">Rising Pune Supergiants</option>
+                        <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                        <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+                    </select>
+                    <button type="submit" class="btn-submit">Analyze Franchise</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

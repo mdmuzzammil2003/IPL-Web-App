@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytical Breakdown - {{ team }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container extended">
+        <header class="main-header">
+            <a href="/" class="btn-back">← Select Another Team</a>
+            <h1>Performance Summary for {{ team }}</h1>
+            <p>Data-driven processing showing competitive win histories and strategic choice metrics.</p>
+        </header>
+
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <h3>Total Matches</h3>
+                <p class="kpi-value">{{ matches }}</p>
+            </div>
+            <div class="kpi-card success">
+                <h3>Total Wins</h3>
+                <p class="kpi-value">{{ wins }}</p>
+            </div>
+            <div class="kpi-card danger">
+                <h3>Total Losses</h3>
+                <p class="kpi-value">{{ losses }}</p>
+            </div>
+            <div class="kpi-card highlight">
+                <h3>Win Ratio</h3>
+                <p class="kpi-value">{{ win_pct }}%</p>
+            </div>
+            <div class="kpi-card secondary">
+                <h3>Toss Wins (%)</h3>
+                <p class="kpi-value">{{ toss_pct }}%</p>
+            </div>
+        </section>
+
+        <section class="visualization-dashboard">
+            <div class="chart-main-row">
+                <div class="chart-box pie-container">
+                    <h3>Tactical Toss Distribution</h3>
+                    <img src="{{ url_for('static', filename=toss_chart) }}" alt="Toss Strategic Breakdown Chart">
+                    <p class="chart-caption">Displays whether the team prefers chasing or setting defensive scores when winning the toss.</p>
+                </div>
+                
+                <div class="chart-box timeline-container">
+                    <h3>Franchise Core Performers (MVPs)</h3>
+                    <img src="{{ url_for('static', filename=mvp_chart) }}" alt="Top Match-Winners MVP Chart">
+                    <p class="chart-caption">Identifies the top 5 elite performers responsible for securing victories for this franchise.</p>
+                </div>
+            </div>
+
+            <div class="chart-full-row">
+                <div class="chart-box full-width">
+                    <h3>Historical Performance Trajectory</h3>
+                    <img src="{{ url_for('static', filename=timeline_chart) }}" alt="Season-by-Season Performance Graph">
+                    <p class="chart-caption">Traces the complete history of total regular season wins across the lifetime of the franchise dataset.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
